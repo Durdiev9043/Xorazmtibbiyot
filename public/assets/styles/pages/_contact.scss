@@ -1,0 +1,128 @@
+.form-field{
+  position: relative;
+  margin-bottom: 35px;
+  &.textarea{
+    &.label-top{
+      label{
+        top: -14px;
+      }
+    }
+    label{
+      top: 12px;
+      bottom: auto;
+    }
+  }
+  &.label-top{
+    label{
+      font-size: 14px;
+      bottom: 38px;
+    }
+  }
+  input{
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px rgba(120, 121, 147, 0.58);
+    font-size: 15px;
+    font-weight: 300;
+    color: #183784;
+    padding: 10px 20px 10px 0;
+    transition: .2s ease;
+    &:focus{
+      border-bottom: 1px solid #183784;
+    }
+  }
+  textarea{
+    font-size: 15px;
+    font-weight: 300;
+    color: #183784;
+    padding: 10px 20px 10px 0;
+    transition: .2s ease;
+    border: none;
+    border-bottom: solid 1px rgba(120, 121, 147, 0.58);
+    width: 100%;
+    height: 170px;
+    resize: none;
+  }
+  label{
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.44);
+    transition: .3s ease;
+    cursor: text;
+  }
+}
+
+.contact-block{
+  padding: 35px 45px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  .social-items{
+    padding-bottom: 0;
+    img{
+      max-width: 24px;
+      max-height: 24px;
+      margin-left: 10px;
+    }
+  }
+  .store{
+    display: flex;
+    align-items: center;
+    a{
+      margin-left: 20px;
+      box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
+      border-radius: 10px;
+      img{
+        width: 126px;
+      }
+    }
+  }
+  &__left{
+    width: 50%;
+    padding-right: 50px;
+  }
+  &__right{
+    width: 50%;
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.08);
+    border: solid 1px rgba(151, 151, 151, 0.34);
+    background-color: #ffffff;
+    padding: 35px;
+    .short-info{
+      color: #000000;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.64;
+      margin-bottom: 30px;
+    }
+    .work-time-info{
+      font-size: 14px;
+      font-weight: bold;
+      color: #183784;
+      padding-top: 12px;
+      padding-bottom: 20px;
+      border-bottom: solid 1px rgba(151, 151, 151, .2);
+    }
+    .info-item{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: solid 1px rgba(151, 151, 151, .2);
+    }
+    span{
+      font-size: 14px;
+      color: #24272b;
+    }
+  }
+  h3{
+    font-size: 20px;
+    color: #183784;
+    font-weight: 700;
+    margin-bottom: 28px;
+  }
+}
+

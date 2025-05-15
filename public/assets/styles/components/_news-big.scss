@@ -1,0 +1,108 @@
+.big-news {
+  width: 100%;
+  display: flex;
+  background-color: #eff2f8;
+  margin-bottom: 30px;
+
+  &__row {
+    display: none;
+  }
+  &_column {
+    flex-direction: column;
+    background-color: #ffffff;
+    .big-news__img {
+      width: 100%;
+      padding-bottom: calc(5% / 8 * 100);
+    }
+    .big-news__title {
+      font-size: 20px;
+    }
+    .big-news__content {
+      width: 100%;
+      padding: 15px 0;
+    }
+  }
+  &__img {
+    width: 50%;
+    padding-bottom: 34%;
+    position: relative;
+    overflow: hidden;
+    &:hover + .big-news__content {
+      .big-news__title {
+        color: $blue;
+      }
+    }
+    img {
+      transition: 1s;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    width: 50%;
+    padding: 25px;
+    // max-height: 354px;
+    // border: 25px solid #eff2f8;
+    overflow: hidden;
+    position: relative;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100px;
+    //   background: rgb(2, 0, 36);
+    //   background: linear-gradient(
+    //     1deg,
+    //     rgba(2, 0, 36, 1) 0%,
+    //     rgba(255, 255, 255, 1) 100%
+    //   );
+    // }
+  }
+  &__title {
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    font-weight: bold;
+    transition: 0.2s ease;
+    margin-bottom: 20px;
+    display: block;
+    &:hover {
+      color: $blue;
+    }
+  }
+  &__description {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #000000;
+    display: block;
+
+    &.truncate {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+.top-news__big {
+  .big-news__title {
+    &:hover {
+      color: $blue !important;
+    }
+  }
+  .big-news {
+    &:hover {
+      .big-news__title {
+        color: #000000;
+      }
+    }
+  }
+}

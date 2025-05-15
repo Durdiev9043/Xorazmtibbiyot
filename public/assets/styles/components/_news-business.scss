@@ -1,0 +1,39 @@
+.news-business{
+  border: 1px solid rgba(151,151,151,0.23);
+  background-color: #FFFFFF;
+  &:hover{
+    border-color: $blue;
+    .news-business__title{
+      color: $blue;
+    }
+  }
+  &__img-wrapper{
+    display: block;
+    width: 100%;
+    padding-bottom: 60%;
+    position: relative;
+    overflow: hidden;
+  }
+  &__img{
+    transition: 1s ease;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+  }
+  &__title{
+    font-size: 15px;
+    padding: 15px;
+    font-weight: 700;
+    font-family: "DINPro";
+    color: #000000;
+    transition: .3s ease;
+    display: block;
+  }
+}
+

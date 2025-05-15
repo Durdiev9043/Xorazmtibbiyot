@@ -1,0 +1,191 @@
+.auth-wrapper{
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  .auth-block{
+    width: 90%;
+    max-width: 770px;
+    display: flex;
+    &.success{
+      height: 520px;
+      .auth-block__right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        form{
+          text-align: center;
+        }
+      }
+    }
+    &__left{
+      padding: 40px 35px;
+      background-image: url("../img/auth-bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 10px 0 0 10px;
+      min-width: 325px;
+      div{
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 25px;
+        padding-left: 25px;
+        max-width: 230px;
+        margin-bottom: 20px;
+      }
+      ul{
+        min-width: 255px;
+        li{
+          color: #ffffff;
+          margin-bottom: 40px;
+          font-size: 14px;
+          max-width: 230px;
+          line-height: 20px;
+          padding-left: 25px;
+          background: url("../img/checked.svg") no-repeat top 7px left;
+        }
+      }
+    }
+    &__right{
+      background-color: #FFFFFF;
+      box-shadow: 2px 4px 14px 0 rgba(0,0,0,0.01);
+      border-radius: 0 10px 10px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .content-block{
+        padding: 40px 50px;
+        color: #282F36;
+      }
+    }
+    .footer-block{
+      padding: 20px 20px 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: rgba(40,47,54,0.8);
+      font-weight: 500;
+      position: relative;
+      &::after{
+        width: calc(100% - 20px);
+        height: 1px;
+        background-color: rgba(40,47,54,0.15);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      a{
+        padding-right: 20px;
+        color: #4592FF!important;
+        background: url("../img/arrow-right.svg") no-repeat center right;
+      }
+    }
+  }
+}
+
+
+.input-field{
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(40,47,54,0.15);
+  background-color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  position: relative;
+  max-width: 320px;
+  input{
+    padding: 9px 30px 9px 50px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    &::placeholder{
+      color: rgba(40,47,54,0.5);
+    }
+  }
+  .field-icon{
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    z-index: 2;
+    &:after{
+      width: 1px;
+      height: 20px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      content: "";
+      background: rgba(40, 47, 54, 0.15)
+    }
+  }
+  &.error{
+    border-color: #e89090;
+  }
+  &.user{
+    .field-icon{
+      background: url("../img/profile.svg") no-repeat center;
+      background-size: 15px;
+    }
+  }
+  &.phone{
+    .field-icon{
+      background: url("../img/telephone.svg") no-repeat center;
+      background-size: 15px;
+    }
+  }
+  &.password{
+    .field-icon{
+      background: url("../img/lock.svg") no-repeat center;
+      background-size: 15px;
+    }
+  }
+  &::placeholder{
+    color: rgba(40,47,54,0.5);
+  }
+}
+.checkbox-field{
+  max-width: 320px;
+  position: relative;
+  user-select: none;
+  margin-bottom: 15px;
+  input{
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    &:checked + .checkbox-mask{
+      background-color: #4592FF;
+      border-color: #4592FF;
+    }
+  }
+  label{
+    display: flex;
+    cursor: pointer;
+  }
+  .checkbox-text{
+    line-height: 20px;
+    font-size: 14px;
+    color: rgba(40,47,54,0.8);
+    margin-left: 10px;
+  }
+  .checkbox-mask{
+    transition: .2s ease;
+    border: 1px solid rgba(40, 47, 54, 0.15);
+    border-radius: 3px;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    background-image: url("../img/checked.svg");
+    background-position: center;
+    background-size: 10px;
+    background-repeat: no-repeat;
+  }
+}

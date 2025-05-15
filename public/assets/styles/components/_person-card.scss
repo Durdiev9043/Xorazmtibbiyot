@@ -1,0 +1,46 @@
+.person-card{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .img-block{
+    width: 100%;
+    position: relative;
+    padding-bottom: 130%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    img{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__title{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  &__description{
+    color: #7c7c7c;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    position: relative;
+    flex: 1 1;
+    &::after{
+      width: 30px;
+      height: 2px;
+      background-color: #979797;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      border-radius: 10px;
+    }
+  }
+}

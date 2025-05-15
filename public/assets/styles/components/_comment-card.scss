@@ -1,0 +1,46 @@
+.comment-card{
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  padding: 16px 25px;
+  &__title{
+    font-size: 13px;
+    font-weight: bold;
+    color: #183784;
+    text-decoration: underline;
+    margin-bottom: 10px;
+  }
+  &__description{
+    font-size: 12px;
+    font-weight: 500;
+    color: $mainColor;
+    line-height: 1.67;
+    margin-bottom: 20px;
+  }
+  &__footer{
+    background-color: #eff2f8;
+    margin: 0 -25px;
+    padding-left: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__date{
+    font-size: 12px;
+    font-weight: 500;
+    opacity: .4;
+    color: $mainColor;
+  }
+  &__status{
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(24, 55, 132, .6);
+    border-right: 4px solid #183784;
+    padding: 8px 30px;
+    background-color: rgba(24, 55, 132, 0.12);
+    &.moderator{
+      background-color: rgba(255, 84, 105, 0.13);
+      color: rgba(208, 2, 27, 0.48);
+      border-right: 4px solid #ff5469;
+    }
+  }
+}

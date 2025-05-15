@@ -1,0 +1,33 @@
+.news-more-read{
+  width: 100%;
+  background-color: rgba(216,216,216,0.31);
+  margin-bottom: 5px;
+  position: relative;
+  transition: .3s ease-in-out;
+  &:hover{
+    background-color: rgba(216, 216, 216, 0.6);
+  }
+  &__title{
+    width: 100%;
+    padding: 0 18px 18px 18px;
+    display: block;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  &__img{
+    width: 100%;
+    position: relative;
+    padding-bottom: 60%;
+    display: block;
+    background-size: cover;
+    background-position: center;
+  }
+  .news-meta{
+    padding: 0 18px;
+    margin: 0
+  }
+  .news__category{
+    z-index: 5;
+  }
+}

@@ -1,0 +1,79 @@
+* {
+	box-sizing:border-box;
+	outline: none;
+}
+
+*:before,
+*:after {
+	box-sizing:border-box;
+}
+
+html {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	font-size: 62.5%;
+	position: relative;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+//Flexbox IE10 fix https://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
+.flexboxtweener, .flexboxtweener body {
+  height: 100%;
+}
+
+body {
+	padding: 0; margin: 0;
+	letter-spacing: 0;
+	font-size: 16px;
+	font-family: $ff-regular;
+	font-weight: 300;
+}
+
+a{
+	display: inline-block;
+	cursor: pointer;
+}
+
+.outer-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+	position: relative;
+	z-index: 3;
+}
+
+.page-header,
+.page-footer {
+  flex: 0 0 auto;
+}
+
+html, body {
+	&.freeze {
+		overflow: hidden;margin: 0; height: 100%;
+	}
+}
+
+
+figure {
+	margin: 0;
+}
+
+button {
+	border: 0;
+	border: none;
+}
+
+[role="button"] {
+	cursor: pointer;
+}
+
+input[type=search] {
+	appearance: none;
+}
+
+
+

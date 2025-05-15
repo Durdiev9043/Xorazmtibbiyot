@@ -1,0 +1,21 @@
+.not-found{
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
+  &__content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    img{
+      margin-bottom: 20px;
+    }
+    span{
+      max-width: 300px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+  }
+}

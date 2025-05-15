@@ -1,0 +1,184 @@
+@mixin clearfix {	
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin link-text-indent {
+  border:0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+
+@mixin justified-menu {
+	width: 100%;
+	text-align: justify;
+	// line-height: 0;
+
+	&:after {
+		content: "";
+		display: inline-block;
+		width: 100%;
+		height: 0px;
+	}
+}
+
+@mixin pseudo-bg {
+	content: '';
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: cover;
+}
+
+/* img absolute centering */
+
+@mixin img-center {
+	position: absolute;
+	left: 0;right: 0;top: 0;bottom: 0;
+	margin: auto;
+}
+
+@mixin centered($axis: 'both') {
+	position: absolute;
+
+	@if ($axis == 'both') {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	@if $axis == 'x' {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	@if $axis == 'y' {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+//Container mixin
+@mixin mob-container {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+@mixin container {
+	width: $md-container-width;
+	margin: 0 auto;
+}
+
+@mixin container-tab {
+	width: $sm-container-width;
+	margin: 0 auto;
+}
+
+@mixin container-fluid {
+	width: 93.25%;
+	min-width: 746px;
+	max-width: 1279px;
+	margin: 0 auto;
+}
+
+
+//Mobile-first Media queries 
+
+@mixin mobile() {
+	@media #{$mobileonly} {
+		@content;
+	}
+}
+
+@mixin mobtab() {
+	@media #{$mobtabonly} {
+		@content;
+	}
+}
+
+@mixin tablet() {
+	@media #{$tabonly} {
+		@content;
+	}
+}
+
+@mixin tabdesk() {
+	@media #{$tabdeskonly} {
+		@content;
+	}
+}
+
+@mixin desktop() {
+	@media #{$deskonly} {
+		@content;
+	}
+}
+
+@mixin mobile-only {
+	@media (min-width:768px) {
+		display: none;
+	}
+}
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == tablet {
+		// @media (max-width: 1200px) {
+		@media #{$mobtabonly} {
+			@content;
+		}
+	}
+
+	@if $breakpoint == phone {
+		@media #{$mobileonly} {
+			@content;
+		}
+	}
+	
+	@if $breakpoint == tabonly {
+		@media #{$tabonly} {
+			@content;
+		}
+	}
+	
+	@if $breakpoint == porttab {
+		@media #{$porttab} {
+			@content;
+		}
+	}
+	
+	@if $breakpoint == landtab {
+		@media #{$landtab} {
+			@content;
+		}
+	}
+	
+	@if $breakpoint == tabdesk {
+		@media #{$tabdeskonly} {
+			@content;
+		}
+	}
+	
+	@if $breakpoint == desktop {
+		@media #{$deskonly} {
+			@content;
+		}
+	}
+}
+
+@mixin iconed {
+	display: flex;
+	align-items: center;
+	// line-height: 1;
+	.icon, .iconimg {
+		flex-shrink: 0;
+	}
+
+}

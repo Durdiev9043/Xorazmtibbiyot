@@ -1,0 +1,79 @@
+.subscription-telegram-wrapper{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  padding: 30px;
+  box-shadow: 0 -9px 24px rgba(0, 0, 0, 0.19);
+  background-color: #ffffff;
+  z-index: 9999;
+}
+.subscription-telegram-block{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .title{
+    color: #183784;
+    font-family: $din;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    padding-left: 70px;
+    &::before{
+      position: absolute;
+      content:'';
+      top: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      width: 60px;
+      height: 60px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../img/subscribe-telegram-before.svg);
+    }
+  }
+  .subscription-telegram-close-btn{
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/cancel.svg);
+    cursor: pointer;
+  }
+  .link-telegram{
+    padding: 13px 30px 13px 65px;
+    display: inline-block;
+    color: #ffffff;
+    font-family: $din;
+    font-size: 16px;
+    border-radius: 50px;
+    background-color: #4a90e2;
+    position: relative;
+    &::before{
+      position: absolute;
+      content:'';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../img/telegrram-link.svg.png);
+    }
+  }
+}
+.hide-subscription{
+  transform: translateY(200%);
+  transition: all .3s ease-in;
+  opacity: 0;
+  visibility: hidden;
+}

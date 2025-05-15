@@ -1,0 +1,177 @@
+.profile-page{
+  display: flex;
+  padding-top: 45px;
+  .left-block{
+    width: 325px;
+    background-color: #ffffff;
+    min-height: 500px;
+    max-height: 500px;
+    margin-top: 34px;
+    position: relative;
+    &::after{
+      width: 100%;
+      height: 220px;
+      background: url("../img/line-shape.svg") no-repeat center;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .profile__img{
+      width: 130px;
+      height: 130px;
+      box-shadow: 0 12px 19px 0 rgba(60, 128, 209, 0.1);
+      background-color: #ffffff;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      transform: translateY(-65px);
+      margin-bottom: -65px;
+      position: relative;
+      z-index: 1;
+      &.default-avatar{
+        padding-bottom: 5px;
+        img{
+          width: 112px;
+          height: 118px;
+          border-radius: 100px;
+          object-fit: cover;
+        }
+      }
+      img{
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        border-radius: 100px;
+        object-fit: cover;
+      }
+    }
+    .profile__name{
+      text-align: center;
+      font-size: 17px;
+      color: #344356;
+      margin-top: 10px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .profile__auth-date{
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.6;
+      color: #344356;
+      margin-bottom: 40px;
+      line-height: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .profile-menu{
+      position: relative;
+      z-index: 1;
+      &__item{
+        font-size: 15px;
+        color: #272755;
+        width: 100%;
+        display: block;
+        padding: 15px 30px;
+        cursor: pointer;
+        transition: .2s ease;
+        &:hover{
+          background-color: rgba(216, 216, 216, 0.2);
+        }
+        &.active{
+          background-color: rgba(216, 216, 216, 0.34);
+        }
+      }
+    }
+  }
+  .right-block{
+    width: calc(100% - 325px);
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    .block-title{
+      font-size: 18px;
+      font-weight: 500;
+      color: #272755;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+
+.select-avatar{
+  margin-bottom: 20px;
+  .label{
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.avatar-checkbox{
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  label{
+    cursor: pointer;
+  }
+  input{
+    display: none;
+    &:checked + .img-block{
+      position: relative;
+      &::after{
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  .img-block{
+    width: 60px; min-width: 60px;
+    height: 60px; min-height: 60px;
+    &::after{
+      width: 25px;
+      height: 25px;
+      content: "";
+      position: absolute;
+      right: -3px;
+      bottom: -3px;
+      background-color: #183784;
+      border-radius: 100px;
+      background-image: url("../img/checked.svg");
+      background-size: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      visibility: hidden;
+      opacity: 0;
+      transition: .3s ease;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 100px;
+    }
+  }
+}
+
+.profile-settings{
+  background-color: #FFFFFF;
+  padding: 40px 55px;
+  flex: 1;
+  form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .select-avatar{
+    margin-bottom: 30px;
+  }
+
+}
