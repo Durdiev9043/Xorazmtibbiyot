@@ -39,9 +39,9 @@
 <body>
 <style>
     img:hover {
-        width: 115% !important;
-        height: 115% !important;
-        object-fit: cover !important;
+        width: 115% ;
+        height: 115% ;
+        object-fit: cover ;
         /*transition: transform 1s !important;*/
     }
     .post-thumbnail img{
@@ -329,7 +329,7 @@
                         </div>
                     </div>
                     <div class="editor-choice">
-                        <div class="block-title" style="background: #22bad233;padding:5px;border-radius:5px"><a href="/marifij/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">MA'RIFIY</a><a class="link" href="/marifij/">Barchasi</a></div>
+                        <div class="block-title" style="background: #22bad233;padding:5px;border-radius:5px"><a href="/marifij/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">	Tabiatning ozi tabib</a><a class="link" href="/marifij/">Barchasi</a></div>
                         <div class="row">
 @foreach($news3 as $new)
                                 <div class="col-md-4">
@@ -420,7 +420,7 @@
                         border: 4px solid #1e77a9 !important;
                         display: block;</style>
                 <a href="/izhtimoij/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;" class="aa">
-                    IJTIMOIY</a>
+                    Jaxon tibbiyoti</a>
                 <a class="link" href="/izhtimoij/">Barchasi</a></div>
             <div class="row">
                 @include('layouts.big2')
@@ -458,7 +458,7 @@
                         border: 4px solid #1e77a9 !important;
                         display: block;</style>
                 <a href="/zhaon-talimi/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;" class="aa">
-                    JAHON TA'LIMI</a>
+                    Shifokor maslaxati</a>
                 <a class="link" href="/zhaon-talimi/">Barchasi</a></div>
             <div class="interview-head space-between">
 
@@ -472,8 +472,16 @@
                             <div class="interview-post">
                                 <a href="{full-link}" class="white-bg">
                                     <div class="ip-head">
+                                        <style>
+                                            .imgxx{
+                                            width: 100% !important;
+                                            height: 100% !important;
+                                            object-fit: cover !important;
+                                            }
+                                            /* transition: transform 1s !important;
+</style>
                                         <div class="post-thumbnail">
-                                            <img src="{{asset('storage/'.$new->images->first()->image)}}">
+                                            <img class="imgxx" src="{{asset('storage/'.$new->images->first()->image)}}">
                                         </div>
                                         <span class="block-word" style="font-size: 22px !important;">Xorazmtibbiyot</span>
                                     </div>
@@ -496,7 +504,7 @@
             <div class="block-title" style="background: #22bad233;padding:5px;border-radius:5px">
                 <style>.aa:before {width: 15px;height: 15px;background: transparent;border: 4px solid #1e77a9 !important;display: block;</style>
                 <a href="/ilm-fan/" style="margin: 10px;text-decoration: none;#455d9b: black;font-size: 18px;font-weight: bold;" class="aa">
-                    ILM-FAN</a>
+                    Sog'lom turmush tarzi</a>
                 <a class="link" href="/ilm-fan/">Barchasi</a></div>
             <div class="row">
 
