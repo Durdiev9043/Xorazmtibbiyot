@@ -352,7 +352,7 @@
                     <div class="mb-25">
 @foreach($latest as $new)
 {{--                        {custom template="sidebar" category="27,49,50,51,28,38" category="38"  limit="8" }--}}
-                            <a class="news-lenta" href="{full-link}">
+                            <a class="news-lenta w-100" href="{full-link}">
                                 <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
                                 <span class="news-lenta__title"> {{ $new->title_uz }}</span>
                             </a>
