@@ -356,6 +356,7 @@
                                 <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
                                 <span class="news-lenta__title"> {{ $new->title_uz }}</span>
                             </a>
+                            <br/>
                         @endforeach
                     </div>
                     <a href="/jangiliklar/" class="main-btn-v2 w-100" style="background: #22bad233;">Ko`proq yangiliklar</a>
