@@ -4,7 +4,7 @@
                 <img src="{{asset('storage/'.$new->images->first()->image)}}"></a></div><div class="news-meta"><span>{{$new2->created_at->format('d M Y h:i ') }}</span></div>
         <div class="big-news__content">
             <a class="big-news__title" href="{full-link}"> {{ $new2->title_uz }}</a>
-            <div class="big-news__description">{{ $new2->content_uz }}...</div>
+            <div class="big-news__description">{{ \Illuminate\Support\Str::limit($new2->content_uz, 250) }}...</div>
 
         </div>
     </div>

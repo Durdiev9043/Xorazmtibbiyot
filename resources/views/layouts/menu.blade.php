@@ -1,8 +1,8 @@
 
 <?php
-
-$categories = \App\Models\Category::whereNull('parent_id')->with('subcategories')->get();
-?>
+//
+//$categories = \App\Models\Category::all();
+//?><!---->
 
 <ul class="page-header__menu reset-list">
     @foreach($categories as $category)
@@ -10,13 +10,13 @@ $categories = \App\Models\Category::whereNull('parent_id')->with('subcategories'
          <a href="{url}" class="menu-link" style="color:#455d9b !important;">
              {{ $category->name_uz }}
          </a>
-         @if($category->subcategories->count())
-             <ul class="dropdown-menu " >
-                 @foreach($category->subcategories as $subcategory)
-                     <li><a class="dropdown-item" href="#">{{ $subcategory->name_uz }}</a></li>
-                 @endforeach
-             </ul>
-         @endif
+{{--         @if($category->subcategories->count())--}}
+{{--             <ul class="dropdown-menu " >--}}
+{{--                 @foreach($category->subcategories as $subcategory)--}}
+{{--                     <li><a class="dropdown-item" href="#">{{ $subcategory->name_uz }}</a></li>--}}
+{{--                 @endforeach--}}
+{{--             </ul>--}}
+{{--         @endif--}}
      </li>
     @endforeach
 </ul>

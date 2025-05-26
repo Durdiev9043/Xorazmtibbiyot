@@ -316,7 +316,7 @@
 @foreach($news as $new)
                                     <div class="col-md-6">
                                         <div class="small-news">
-                                            <a class="small-news__img" href="{full-link}"><img src="{{asset('storage/posts/ACaW6iQ9RpA4ak1ke4MbrUMKNG4deOOYawQvXJbF.jpg')}}" /></a>
+                                            <a class="small-news__img" href="{full-link}"><img src="{{asset('storage/'.$new->images->first()->image)}}" /></a>
                                             <div class="small-news__content">
                                                 <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
                                                 <a class="small-news__title" href="{full-link}">{{ $new->title_uz }}</a>
@@ -335,7 +335,7 @@
                                 <div class="col-md-4">
                                     <div class="news">
                                         <div class="news__img p-relative">
-                                            <a href="{full-link}"><img src="{{asset('storage/posts/ACaW6iQ9RpA4ak1ke4MbrUMKNG4deOOYawQvXJbF.jpg')}}"></a>
+                                            <a href="{full-link}"><img src="{{asset('storage/'.$new->images->first()->image)}}"></a>
                                         </div>
                                         <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
                                         <a class="news__title" href="{full-link}">{{ $new->title_uz }}</a>
@@ -431,7 +431,7 @@
                                 <div class="news">
                                     <div class="news__img p-relative">
                                         <a href="{full-link}">
-                                            <img src="{{asset('storage/posts/ACaW6iQ9RpA4ak1ke4MbrUMKNG4deOOYawQvXJbF.jpg')}}"></a></div>
+                                            <img src="{{asset('storage/'.$new->images->first()->image)}}"></a></div>
                                     <a class="news__title" href="{full-link}">{{ $new->title_uz }}</a>
                                     <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
                                 </div>
@@ -472,7 +472,7 @@
                                 <a href="{full-link}" class="white-bg">
                                     <div class="ip-head">
                                         <div class="post-thumbnail">
-                                            <img src="{{asset('storage/posts/ACaW6iQ9RpA4ak1ke4MbrUMKNG4deOOYawQvXJbF.jpg')}}">
+                                            <img src="{{asset('storage/'.$new->images->first()->image)}}">
                                         </div>
                                         <span class="block-word" style="font-size: 22px !important;">Xorazmtibbiyot</span>
                                     </div>
@@ -507,10 +507,10 @@
                                 <div class="col-md-4 mb-30">
                                     <div class="news">
                                         <div class="news__img p-relative">
-                                            <a href="{full-link}"><img src="{{asset('storage/posts/ACaW6iQ9RpA4ak1ke4MbrUMKNG4deOOYawQvXJbF.jpg')}}"></a></div>
+                                            <a href="{full-link}"><img src="{{asset('storage/'.$new->images->first()->image)}}"></a></div>
                                         <a class="news__title" href="{full-link}">{{ $new->title_uz }}</a>
                                         <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
-                                        <div class="news__desc">{{ $new->content_uz }}...</div>
+                                        <div class="news__desc">{{ \Illuminate\Support\Str::limit($new->content_uz, 200) }}...</div>
                                     </div>
                                 </div>
 {{--                            {custom template="three_content" category="50"  limit="6"}--}}
@@ -520,105 +520,30 @@
                     </div>
                 </div>
             </div>
-            <div class="container" id="authored-news" data="{&quot;title_all&quot;:&quot;\u0411\u0430\u0440\u0447\u0430\u0441\u0438&quot;,&quot;url&quot;:&quot;\/news\/list?f=authored&quot;,&quot;img&quot;:&quot;\/assets\/3d48c862\/img\/blue-right-arrow.svg&quot;}">
-                <div class="block-title" style="background: #22bad233;padding:5px;border-radius:5px">
-                    <style>.aa:before {
-                            width: 15px;
-                            height: 15px;
-                            background: transparent;
-                            border: 4px solid #1e77a9 !important;
-                            display: block;</style>
-                    <a href="/uuij/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;" class="aa">
-                        HUQUQIY</a>
-                    <a class="link" href="/uuij/">Barchasi</a></div>
-                <div class="row">
+{{--            <div class="container" id="authored-news" >--}}
+{{--                <div class="block-title" style="background: #22bad233;padding:5px;border-radius:5px">--}}
+{{--                    <style>.aa:before {--}}
+{{--                            width: 15px;--}}
+{{--                            height: 15px;--}}
+{{--                            background: transparent;--}}
+{{--                            border: 4px solid #1e77a9 !important;--}}
+{{--                            display: block;</style>--}}
+{{--                    <a href="/uuij/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;" class="aa">--}}
+{{--                        HUQUQIY</a>--}}
+{{--                    <a class="link" href="/uuij/">Barchasi</a></div>--}}
+{{--                <div class="row">--}}
 
-                    {custom template="four_top" category="38"  limit="6"  order="date" sort="desc"}
+{{--              --}}
 
-                </div>
+{{--                </div>--}}
 
 
-            </div>
-            [/aviable]
-            <!-- <div class="business-block__slider">
-                <div class="container p-relative">
-                   <div class="swiper-container swiper-container-horizontal">
-                      <div class="swiper-wrapper">
-                         <div class="swiper-slide swiper-slide-active" style="width: 253.2px; margin-right: 26px;"><a class="news-business" href="/news/2023/06/13/uzbekistan-airways-toshkentdan-urumchiga-parvozlarni-yolga-qoymoqda"><span class="news-business__img-wrapper"><span class="news-business__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/IHZUuAgaRxWFgQ9pXgVO6mCqkXKwDLx0_medium.jpg')"></span></span><span class="news-business__title">Uzbekistan Airways Тошкентдан Урумчига парвозларни йўлга қўймоқда!</span></a></div>
-                         <div class="swiper-slide swiper-slide-next" style="width: 253.2px; margin-right: 26px;"><a class="news-business" href="/news/2023/06/12/dream-park-gafur-gulom-nomidagi-istirohat-bogida-pepsi-bilan-futbol-oyligi-bolib-otdi"><span class="news-business__img-wrapper"><span class="news-business__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/c9TRm4ipY9PoxlWxQx8BOFEmKpRH4se4_medium.jpg')"></span></span><span class="news-business__title">Dream Park (Ғафур Ғулом номидаги истироҳат боғи)да Pepsi билан футбол ойлиги бўлиб ўтди</span></a></div>
-                         <div class="swiper-slide" style="width: 253.2px; margin-right: 26px;"><a class="news-business" href="/news/2023/06/12/erkak-va-ayollar-uchun-terlash-va-hidga-qarshi-samarali-vosita"><span class="news-business__img-wrapper"><span class="news-business__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/JDRpoRpJfwb4WhIhvLDbeEnrz3NIeE6Q_medium.jpg')"></span></span><span class="news-business__title">Эркак ва аёллар учун терлаш ва ҳидга қарши самарали восита</span></a></div>
-                         <div class="swiper-slide" style="width: 253.2px; margin-right: 26px;"><a class="news-business" href="/news/2023/06/11/kutganingizdan-ham-ortiqroq-premium-avtomobil"><span class="news-business__img-wrapper"><span class="news-business__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/iXO79Fa7b0IzZRQiGALx2jk7nOzy0u93_medium.jpg')"></span></span><span class="news-business__title">Кутганингиздан ҳам ортиқроқ премиум автомобил!</span></a></div>
-                         <div class="swiper-slide" style="width: 253.2px; margin-right: 26px;"><a class="news-business" href="/news/2023/06/11/xon-saroyning-navbatdagi-loyihasi-oz-eshiklarini-ochdi"><span class="news-business__img-wrapper"><span class="news-business__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/6E8zosploYBXWpA8KltCOW3-E3G1TYIR_medium.jpg')"></span></span><span class="news-business__title">“Xon Saroy”нинг навбатдаги лойиҳаси ўз эшикларини очди</span></a></div>
-                         <div class="swiper-slide" style="width: 253.2px; margin-right: 26px;"><a class="news-business" href="/news/2023/06/09/toshkentda-chiqindilar-qanday-qayta-ishlanadi"><span class="news-business__img-wrapper"><span class="news-business__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/5ppD4DXTY6XbJMXvkwTz42FYmu_nO0JG_medium.jpg')"></span></span><span class="news-business__title">Тошкентда чиқиндилар қандай қайта ишланади?</span></a></div>
-                         <div class="swiper-slide" style="width: 253.2px; margin-right: 26px;"><a class="news-business" href="/news/2023/06/09/rossiya-sogliqni-saqlash-vaziri-samarqand-bolalar-xirurgiya-markaziga-keldi"><span class="news-business__img-wrapper"><span class="news-business__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/MnA8hCQJhN5vVaVy-3PsxaEUKRSSepfx_medium.jpg')"></span></span><span class="news-business__title">Россия соғлиқни сақлаш вазири Самарқанд болалар хирургия марказига келди</span></a></div>
-                         <div class="swiper-slide" style="width: 253.2px; margin-right: 26px;"><a class="news-business" href="/news/2023/06/07/turonbankning-barcha-ofislari-quyosh-panellari-bilan-toliq-qoplandi"><span class="news-business__img-wrapper"><span class="news-business__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/jUNIKWr-G15bAMiLi0KlxDqAytY5E0Ym_medium.jpg')"></span></span><span class="news-business__title">Туронбанкнинг барча офислари қуёш панеллари билан тўлиқ қопланди!</span></a></div>
-                      </div>
-                      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                   </div>
-                   <div class="swiper-navigation">
-                      <div class="swiper-btn swiper-btn_prev swiper-btn_disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
-                      <div class="swiper-btn swiper-btn_next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
-                   </div>
-                </div>
-             </div>
-             <div class="container">
-                <div class="row">
-                   <div class="col-md-6" id="video-news-content" data="{&quot;title&quot;:&quot;\u0412\u0438\u0434\u0435\u043e\u044f\u043d\u0433\u0438\u043b\u0438\u043a\u043b\u0430\u0440&quot;,&quot;url&quot;:&quot;\/news\/list?f=video&amp;t=1&quot;,&quot;link&quot;:&quot;\/news\/list?f=video&quot;,&quot;img&quot;:&quot;\/assets\/3d48c862\/img\/blue-right-arrow.svg&quot;,&quot;btn_title&quot;:&quot;\u0411\u0430\u0440\u0447\u0430 \u043c\u0430\u049b\u043e\u043b\u0430\u043b\u0430\u0440&quot;}">
-                      <div class="block-title mt-20 mb-20"><span>Видеоянгиликлар</span><a class="all-link" href="/news/list?f=video">Барча мақолалар<img src="{THEME}/assets/3d48c862/img/blue-right-arrow.svg"></a></div>
-                      <a class="top-gallery" href="/news/2023/06/12/qoqon-shahri-bozorida-katta-yongin-sodir-boldi"><span class="top-gallery__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/urvAyd4Nv3kQ2A8te_dwSp2WKDC7y6b3_medium.jpg')"></span><span class="top-gallery__play-icon video"></span><span class="top-gallery__title">Қўқон шаҳри бозорида катта ёнғин чиқди&nbsp;</span></a>
-                      <div class="row">
-                         <div class="col-md-6">
-                            <div class="gallery-item">
-                               <a class="gallery-item__img" href="/news/2023/06/12/islohotlar-ortga-qaytmasligi-uchun-nima-qilish-kerak">
-                                  <div class="img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/wPb682DouiWiC0n1PlsER5_jkQdMu9_3_medium.jpg')"></div>
-                                  <span class="gallery-item__play-icon video"></span>
-                               </a>
-                               <div class="news-meta"><span>20:14 / 12.06.2023</span><a class="category" href="/news/category/uzbekiston">Ўзбекистон</a></div>
-                               <a class="gallery-item__title" href="/news/2023/06/12/islohotlar-ortga-qaytmasligi-uchun-nima-qilish-kerak">Ислоҳотлар ортга қайтмаслиги учун, нима қилиш керак?</a>
-                            </div>
-                         </div>
-                         <div class="col-md-6">
-                            <div class="gallery-item">
-                               <a class="gallery-item__img" href="/news/2023/06/12/vengerga-yoq-degan-mourinoni-otasidek-korgan-gvardioladan-nafratlangan-ibrahimovich-faoliyatidagi-eng-yorqin-lahzalar">
-                                  <div class="img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/Up7qbfiLMGbgJMAcIGWWKO13N8HZJ4bO_medium.jpg')"></div>
-                                  <span class="gallery-item__play-icon video"></span>
-                               </a>
-                               <div class="news-meta"><span>19:56 / 12.06.2023</span><a class="category" href="/news/category/sport">Спорт</a></div>
-                               <a class="gallery-item__title" href="/news/2023/06/12/vengerga-yoq-degan-mourinoni-otasidek-korgan-gvardioladan-nafratlangan-ibrahimovich-faoliyatidagi-eng-yorqin-lahzalar">Венгерга йўқ деган, Моуриньони отасидек кўрган, Гвардиоладан нафратланган. Ибраҳимович фаолиятидаги энг ёрқин лаҳзалар</a>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                   <div class="col-md-6" id="photo-news-content" data="{&quot;url&quot;:&quot;\/news\/list?f=photo&amp;t=1&quot;,&quot;link&quot;:&quot;\/news\/list?f=photo&quot;,&quot;title&quot;:&quot;\u0424\u043e\u0442\u043e\u044f\u043d\u0433\u0438\u043b\u0438\u043a\u043b\u0430\u0440&quot;,&quot;img&quot;:&quot;\/assets\/3d48c862\/img\/blue-right-arrow.svg&quot;,&quot;btn_title&quot;:&quot;\u0411\u0430\u0440\u0447\u0430 \u043c\u0430\u049b\u043e\u043b\u0430\u043b\u0430\u0440&quot;}">
-                      <div class="block-title mt-20 mb-20"><span>Фотоянгиликлар</span><a class="all-link" href="/news/list?f=photo">Барча мақолалар<img src="{THEME}/assets/3d48c862/img/blue-right-arrow.svg"></a></div>
-                      <a class="top-gallery" href="/news/2023/06/13/putinning-qalin-dosti-bolgan-qrimga-kelgan-va-uch-bor-istefoga-chiqqan-berluskonining-hayoti-suratlarda"><span class="top-gallery__img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/2aaK5TPOPJ5htX4Y_raoonhzQJ4a-bw3_medium.jpg')"></span><span class="top-gallery__play-icon image"></span><span class="top-gallery__title">Путиннинг қалин дўсти бўлган, Қримга келган ва уч бор истеъфога чиққан. Берлусконининг ҳаёти суратларда</span></a>
-                      <div class="row">
-                         <div class="col-md-6">
-                            <div class="gallery-item">
-                               <a class="gallery-item__img" href="/news/2023/06/12/ukrainlar-yurishidan-ilk-kadrlar-va-suvsizlangan-suv-ombori-urush-suratlari">
-                                  <div class="img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/hlxji7rXt6Jrtkgpejfu1LYqnVJTsKAa_medium.jpg')"></div>
-                                  <span class="gallery-item__play-icon image"></span>
-                               </a>
-                               <div class="news-meta"><span>16:57 / 12.06.2023</span><a class="category" href="/news/category/jahon">Жаҳон</a></div>
-                               <a class="gallery-item__title" href="/news/2023/06/12/ukrainlar-yurishidan-ilk-kadrlar-va-suvsizlangan-suv-ombori-urush-suratlari">Украинлар юришидан илк кадрлар ва сувсизланган сув омбори. Уруш суратлари</a>
-                            </div>
-                         </div>
-                         <div class="col-md-6">
-                            <div class="gallery-item">
-                               <a class="gallery-item__img" href="/news/2023/06/12/ochilish-marosimi-masharipovlar-ikki-debyutant-hujumchisiz-ozbekiston-3ta-gol-urgan-oyindan-sara-fotosuratlar">
-                                  <div class="img" style="background-image: url('https://storage.kun.uz/source/thumbnails/_medium/9/Dc0b1EbJPyS18vrJZWGDUm8sI7GYuBg__medium.jpg')"></div>
-                                  <span class="gallery-item__play-icon image"></span>
-                               </a>
-                               <div class="news-meta"><span>10:38 / 12.06.2023</span><a class="category" href="/news/category/sport">Спорт</a></div>
-                               <a class="gallery-item__title" href="/news/2023/06/12/ochilish-marosimi-masharipovlar-ikki-debyutant-hujumchisiz-ozbekiston-3ta-gol-urgan-oyindan-sara-fotosuratlar">Очилиш маросими, Машариповлар, икки дебютант. Ҳужумчисиз Ўзбекистон 3та гол урган ўйиндан сара фотосуратлар</a>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </main>-->
+{{--            </div>--}}
+
+
+
+
+
         </div>
     </div>
     <footer class="page-footer">
@@ -644,19 +569,20 @@
             <div class="footer-bottom" style="background-color: #3f6da6;">
                 <div class="container space-between">
                     <div class="footer-text">
-                        “USTOD.UZ” saytida eʼlon qilingan materiallardan nusxa koʻchirish,
+                        “xorazmtibbiyot.uz” saytida eʼlon qilingan materiallardan nusxa koʻchirish,
                         tarqatish va boshqa shakllarda foydalanish faqat tahririyat yozma
                         roziligi bilan amalga oshirilishi mumkin.<br /><!--Guvohnoma: №0987. Berilgan sanasi: 22.06.2015-yil.-->
-                        Muassis: “Axborot-kommunikatsiya texnologiyalarini rivojlantirish markazi” MCHJ.
-                        Tahririyat manzili: 100117, Toshkent shahar Chilonzor tumani 20-mavze.
-                        Elektron manzil: info@ustod.uz.<br/>Saytda eʼlon qilinayotgan mualliflik maqolalarida keltirilgan fikrlar
-                        muallifga tegishli va ular Ustod.uz tahririyati nuqtai nazarini ifoda etmasligi mumkin.
-                        Ishonch telefoni:+998(99) 799-00-72
+                        Saytda eʼlon qilinayotgan mualliflik maqolalarida keltirilgan fikrlar  muallifga tegishli va ular xorazmtibbiyot.uz tahririyati nuqtai nazarini ifoda etmasligi mumkin.<br>
+{{--                        Muassis: “Axborot-kommunikatsiya texnologiyalarini rivojlantirish markazi” MCHJ.--}}
+                        Tahririyat manzili: 100117, Xorazm viloyati Urganch shaxar.<br>
+                        Elektron manzil: info@xorazmtibbiyot.uz <br/>
+
+                        Ishonch telefoni:+998(70) 700-00-00
                         <!-- <br/>Ⓣ - maqola va materiallarda qo‘yilgan mazkur belgi ularning tijorat va reklama huquqlari
                          asosida eʼlon qilinganligini bildiradi. -->
                     </div>
                     <ul class="social-items reset-list">
-                        <div class="social-item"><a href="https://www.youtube.com/@UstodUz" target="_blank"><img src="{THEME}/assets/99110d40/img/social-youtube.svg"></a></div>
+                        <div class="social-item"><a href="https://www.youtube.com/@UstodUz" target="_blank"><img src="{{asset('/assets/99110d40/img/social-youtube.svg')}}"></a></div>
                         <div class="social-item"><a href="https://t.me/ustoduz" target="_blank"><img src="{THEME}//assets/99110d40/img/social-telegram.svg"></a></div>
                         <div class="social-item"><a href="https://www.facebook.com/groups/www.ustoztv.uz" target="_blank"><img src="{THEME}//assets/99110d40/img/social-facebook.svg"></a></div>
                         <div class="social-item"><a href="#" target="_blank"><img src="{THEME}//assets/99110d40/img/social-twitter.svg"></a></div>
@@ -669,7 +595,7 @@
     </footer>
 
     <a class="cd-top js-cd-top cd-top--fade-out" href="#0">Top</a>
-</div>
+{{--</div>--}}
 <script src="/assets/7e1edea8/jquery.min.js?v=1657693738"></script>
 <script src="/assets/99110d40/js/app.js?v=1657693738" version="1.1"></script>
 <div id="adfox_165028636255075108"></div>

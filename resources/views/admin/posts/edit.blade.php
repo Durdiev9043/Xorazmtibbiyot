@@ -13,13 +13,10 @@
                 <label for="category_id" class="form-label">Kategoriya</label>
                 <select name="category_id" id="category_id" class="form-select" required>
                     @foreach($categories as $category)
-                        <optgroup label="{{ $category->name_uz }}">
-                            @foreach($category->subcategories as $sub)
-                                <option value="{{ $sub->id }}" {{ $post->category_id == $sub->id ? 'selected' : '' }}>
-                                    {{ $sub->name_uz }}
-                                </option>
-                            @endforeach
-                        </optgroup>
+                        <option value="{{ $category->id }}" {{ $category->id == $post->category_id ? 'selected' : '' }}>
+                            {{ $category->name_uz }}
+                        </option>
+
                     @endforeach
                 </select>
             </div>

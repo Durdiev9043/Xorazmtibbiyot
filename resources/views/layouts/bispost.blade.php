@@ -8,7 +8,7 @@
         <span class="big-news__content">
                                     <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
                                     <span class="big-news__title">{{ $new->title_uz }}</span>
-                                    <span class="big-news__description">{{ $new->content_uz }}...</span>
+                                    <span class="big-news__description">{{ \Illuminate\Support\Str::limit($new->content_uz, 400) }}...</span>
                                  </span>
     </a>
 </div>

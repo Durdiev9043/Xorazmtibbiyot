@@ -16,7 +16,7 @@ class PostController extends Controller
 
     public function create()
     {
-        $categories = Category::whereNotNull('parent_id')->get();
+        $categories = Category::all();
         return view('admin.posts.create', compact('categories'));
     }
 
@@ -52,7 +52,8 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        $categories = Category::whereNull('parent_id')->with('subcategories')->get();
+        $categories = Category::all();
+
         $post->load('images');
         return view('admin.posts.edit', compact('post', 'categories'));
     }

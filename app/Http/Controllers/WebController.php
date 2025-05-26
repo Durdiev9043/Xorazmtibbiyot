@@ -10,7 +10,7 @@ class WebController extends Controller
 {
     public function home()
     {
-        $categories =Category::whereNull('parent_id')->with('subcategories')->get();
+        $categories =Category::all();
         $new=Post::with('images')->latest()->first();
         $new2=Post::with('images')->latest()->first();
         $news=Post::with('images')->latest()->take(4)->get();

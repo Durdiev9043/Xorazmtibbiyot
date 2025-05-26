@@ -17,22 +17,46 @@ class DataSeeder extends Seeder
     {
         $parentCategories = [
             [
-                'name_uz' => 'Kasalliklar',
-                'name_en' => 'Diseases',
-                'name_ru' => 'Болезни',
-                'subcategories' => [
-                    ['uz' => 'Yurak kasalliklari', 'en' => 'Cardiovascular', 'ru' => 'Сердечно-сосудистые'],
-                    ['uz' => 'Nafas yo‘llari', 'en' => 'Respiratory', 'ru' => 'Дыхательная система'],
-                ]
+                'name_uz' => 'Yangiliklar',
+                'name_ru' => 'Новости',
+                'name_en' => 'News',
+
             ],
             [
-                'name_uz' => 'Tibbiy maslahatlar',
-                'name_en' => 'Medical Tips',
-                'name_ru' => 'Медицинские советы',
-                'subcategories' => [
-                    ['uz' => 'Sog‘lom ovqatlanish', 'en' => 'Healthy Eating', 'ru' => 'Здоровое питание'],
-                    ['uz' => 'Jismoniy faollik', 'en' => 'Physical Activity', 'ru' => 'Физическая активность'],
-                ]
+                'name_uz' => 'Jaxon tibbiyoti',
+                'name_ru' => 'Мировая медицина',
+                'name_en' => 'World Medicine',
+
+            ],
+            [
+                'name_uz' => 'Shifokor maslaxati',
+                'name_en' => 'Doctor\'s advice',
+                'name_ru' => 'Совет врача',
+
+            ],
+            [
+                'name_uz' => 'Profilaktika',
+                'name_en' => 'Prevention',
+                'name_ru' => 'Профилактика',
+
+            ],
+            [
+                'name_uz' => 'Sog\'lom turmush tarzi',
+                'name_en' => 'Healthy lifestyle',
+                'name_ru' => 'Здоровый образ жизни',
+
+            ],
+            [
+                'name_uz' => 'Tabiatning ozi tabib',
+                'name_en' => 'Nature\'s little healer',
+                'name_ru' => 'Маленький целитель природы',
+
+            ],
+            [
+                'name_uz' => 'Faoliyat',
+                'name_en' => 'Activity',
+                'name_ru' => 'Активность',
+
             ]
         ];
 
@@ -41,40 +65,14 @@ class DataSeeder extends Seeder
                 'name_uz' => $parent['name_uz'],
                 'name_en' => $parent['name_en'],
                 'name_ru' => $parent['name_ru'],
-                'parent_id' => null,
+
             ]);
 
-            foreach ($parent['subcategories'] as $sub) {
-                Category::create([
-                    'name_uz' => $sub['uz'],
-                    'name_en' => $sub['en'],
-                    'name_ru' => $sub['ru'],
-                    'parent_id' => $parentCategory->id,
-                ]);
-            }
         }
-        $categories = Category::whereNotNull('parent_id')->get();
 
-        foreach ($categories as $category) {
-            for ($i = 1; $i <= 3; $i++) {
-                $post = Post::create([
-                    'category_id' => $category->id,
-                    'title_uz' => "$category->name_uz bo‘yicha maslahat $i",
-                    'title_en' => "$category->name_en advice $i",
-                    'title_ru' => "$category->name_ru совет $i",
-                    'content_uz' => "$category->name_uz haqida foydali ma'lumotlar. Bu $i-chi maqola.",
-                    'content_en' => "Useful information about $category->name_en. This is article $i.",
-                    'content_ru' => "Полезная информация о $category->name_ru. Это статья $i.",
-//                    'status' => 'active',
-                ]);
 
-                for ($j = 1; $j <= 5; $j++) {
-                    $post->images()->create([
-                        'image' => "posts/ACaW6iQ9RpA4ak1ke4MbrUMKNG4deOOYawQv.jpg",
-                    ]);
-                }
-            }
-        }
+
+
     }
 
 

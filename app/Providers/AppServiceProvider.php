@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
             App::setLocale(Session::get('locale'));
         }
         View::composer('*', function ($view) {
-            $view->with('menu_categories', Category::whereNull('parent_id')->with('subcategories')->get());
+            $view->with('menu_categories', Category::all());
         });
     }
 }

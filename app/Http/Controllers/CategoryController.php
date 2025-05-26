@@ -25,7 +25,7 @@ class CategoryController extends Controller
             'name_uz' => 'required',
         ]);
 
-        Category::create($request->only('name_uz', 'name_ru', 'name_en', 'parent_id'));
+        Category::create($request->only('name_uz', 'name_ru', 'name_en', ));
 
         return redirect()->route('categories.index')->with('success', 'Kategoriya yaratildi!');
     }
@@ -42,7 +42,7 @@ class CategoryController extends Controller
             'name_uz' => 'required',
         ]);
 
-        $category->update($request->only('name_uz', 'name_ru', 'name_en', 'parent_id'));
+        $category->update($request->only('name_uz', 'name_ru', 'name_en', ));
 
         return redirect()->route('categories.index')->with('success', 'Kategoriya yangilandi!');
     }
