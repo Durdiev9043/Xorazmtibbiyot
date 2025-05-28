@@ -1,13 +1,14 @@
 
 <?php
-//
-//$categories = \App\Models\Category::all();
-//?><!---->
+
+$categories = \App\Models\Category::all();
+?>
+
 
 <ul class="page-header__menu reset-list">
     @foreach($categories as $category)
      <li class="page-header__menu-item" style="font-size: 11px !important;">
-         <a href="{url}" class="menu-link" style="color:#455d9b !important;">
+         <a href="{{ route('cat',$category->id) }}" class="menu-link" style="color:#455d9b !important;">
              {{ $category->name_uz }}
          </a>
 {{--         @if($category->subcategories->count())--}}

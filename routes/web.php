@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',  [WebController::class, 'home']);
+Route::get('/cat/{id}',  [WebController::class, 'cat'])->name('cat');
+Route::get('/post/{id}',  [WebController::class, 'post'])->name('post');
 
 Auth::routes();
 

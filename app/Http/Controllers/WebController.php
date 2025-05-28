@@ -21,5 +21,20 @@ class WebController extends Controller
 
     }
 
+    public function cat($id)
+    {
+        $cat=Category::where('id',$id)->get();
+        $news=Post::where('category_id',$id)->with('images')->get();
+        $latest=Post::with('images')->latest()->take(8)->get();
+        return view('cat',['news'=>$news,'cat'=>$cat,'latest'=>$latest]);
+    }
+    public function post($id)
+    {
+        $new=Post::where('id',$id)->with('images')->first();
+        $cat=Category::where('id',$new->category_id)->first();
+        $latest=Post::with('images')->latest()->take(8)->get();
+        return view('new',['new'=>$new,'cat'=>$cat,'latest'=>$latest]);
+    }
+
 
 }

@@ -3,7 +3,7 @@
 
 
 <div class="top-news__big">
-    <a class="big-news" href="{full-link}">
+    <a class="big-news" href="{{ route('post',$new->id) }}">
         <span class="big-news__img"><img src="{{asset('storage/'.$new->images->first()->image)}}" /></span>
         <span class="big-news__content">
                                     <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
