@@ -5,6 +5,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +20,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',  [WebController::class, 'home']);
-Route::get('/cat/{id}',  [WebController::class, 'cat'])->name('cat');
-Route::get('/post/{id}',  [WebController::class, 'post'])->name('post');
 
+//Route::get('lang/{locale}', function ($locale) {
+//    $availableLocales = ['uz', 'en', 'ru']; // qo'llab-quvvatlanadigan tillar
+//    if (in_array($locale, $availableLocales)) {
+//        Session::put('locale', $locale);
+//    }
+//    return Redirect::back();
+//})->name('lang.switch');
+Route::group(
+    ['prefix' => LaravelLocalization::setLocale(), 'middleware' => [
+//        'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'
+        'web',
+//        'localeSessionRedirect',
+//        'localizationRedirect',
+    ]],
+    function () {
+        Route::get('/', [WebController::class, 'home']);
+        Route::get('/cat/{id}', [WebController::class, 'cat'])->name('cat');
+        Route::get('/post/{id}', [WebController::class, 'post'])->name('post');
+    });
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

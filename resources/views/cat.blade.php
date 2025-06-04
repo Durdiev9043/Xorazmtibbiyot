@@ -20,14 +20,27 @@
                                 <div class="col-md-4 mb-30">
                                     <div class="news">
                                         <div class="news__img p-relative">
-                                            <a href="{{ route('post',$new->id) }}"><img src="{{asset('storage/'.$new->images->first()->image)}}"></a></div>
-                                        <a class="news__title" href="{{ route('post',$new->id) }}">{{ $new->title_uz }}</a>
-                                        <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
-                                        <div class="news__desc">{{ \Illuminate\Support\Str::limit($new->content_uz, 200) }}...</div>
+                                            <a href="{{ route('post', $new->id) }}">
+                                                @if ($new->images->isNotEmpty())
+                                                    <img src="{{ asset('storage/' . $new->images->first()->image) }}">
+                                                @else
+                                                    <img src="{{ asset('images/default.png') }}"> {{-- agar rasm bo'lmasa --}}
+                                                @endif
+                                            </a>
+                                        </div>
+                                        <a class="news__title" href="{{ route('post', $new->id) }}">
+                                            {{ $new->{'title_' . app()->getLocale()} ?? $new->title_uz }}
+                                        </a>
+                                        <div class="news-meta">
+                                            <span>{{ $new->created_at->format('d M Y H:i') }}</span>
+                                        </div>
+                                        <div class="news__desc">
+                                            {{ \Illuminate\Support\Str::limit($new->{'content_' . app()->getLocale()} ?? $new->content_uz, 200) }}...
+                                        </div>
                                     </div>
                                 </div>
-                                {{--                            {custom template="three_content" category="50"  limit="6"}--}}
                             @endforeach
+
 
                         </div>
                     </div>
@@ -64,15 +77,20 @@
         <a href="/uuij/" class="block-title" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">So'ngi yangiliklar</a>
         <div class="mb-25">
             @foreach($latest as $new)
-                {{--                        {custom template="sidebar" category="27,49,50,51,28,38" category="38"  limit="8" }--}}
-                <a class="news-lenta w-100" href="{full-link}">
-                    <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
-                    <span class="news-lenta__title"> {{ $new->title_uz }}</span>
+                {{-- {custom template="sidebar" category="27,49,50,51,28,38" category="38"  limit="8" } --}}
+                <a class="news-lenta w-100" href="{{ route('post', $new->id) }}">
+                    <div class="news-meta">
+                        <span>{{ $new->created_at->format('d M Y H:i') }}</span>
+                    </div>
+                    <span class="news-lenta__title">
+            {{ $new->{'title_' . app()->getLocale()} ?? $new->title_uz }}
+        </span>
                 </a>
                 <br/>
             @endforeach
+
         </div>
-        <a href="/jangiliklar/" class="main-btn-v2 w-100" style="background: #22bad233;">Ko`proq yangiliklar</a>
+        <a href="/" class="main-btn-v2 w-100" style="background: #22bad233;">Ko`proq yangiliklar</a>
     </div>
 
 </div>

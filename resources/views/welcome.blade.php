@@ -21,10 +21,16 @@
                             @foreach($news as $new)
                                 <div class="col-md-6">
                                     <div class="small-news">
-                                        <a class="small-news__img" href="{{ route('post',$new->id) }}"><img src="{{asset('storage/'.$new->images->first()->image)}}" /></a>
+                                        <a class="small-news__img" href="{{ route('post', $new->id) }}">
+                                            <img src="{{ asset('storage/' . $new->images->first()->image) }}" />
+                                        </a>
                                         <div class="small-news__content">
-                                            <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
-                                            <a class="small-news__title" href="{full-link}">{{ $new->title_uz }}</a>
+                                            <div class="news-meta">
+                                                <span>{{ $new->created_at->format('d M Y h:i') }}</span>
+                                            </div>
+                                            <a class="small-news__title" href="{{ route('post', $new->id) }}">
+                                                {{ $new->{'title_' . app()->getLocale()} }}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -40,13 +46,22 @@
                             <div class="col-md-4">
                                 <div class="news">
                                     <div class="news__img p-relative">
-                                        <a href="{{ route('post',$new->id) }}"><img src="{{asset('storage/'.$new->images->first()->image)}}"></a>
+                                        <a href="{{ route('post', $new->id) }}">
+                                            @if ($new->images->isNotEmpty())
+                                                <img src="{{ asset('storage/' . $new->images->first()->image) }}">
+                                            @else
+                                                <img src="{{ asset('images/default.png') }}"> {{-- zaxira rasm --}}
+                                            @endif
+                                        </a>
                                     </div>
-                                    <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
-                                    <a class="news__title" href="{{ route('post',$new->id) }}">{{ $new->title_uz }}</a>
+                                    <div class="news-meta">
+                                        <span>{{ $new->created_at->format('d M Y H:i') }}</span>
+                                    </div>
+                                    <a class="news__title" href="{{ route('post', $new->id) }}">
+                                        {{ $new->{'title_' . app()->getLocale()} ?? $new->title_uz }}
+                                    </a>
                                 </div>
                             </div>
-                            {{--                            {custom template="three_top" category="49"  limit="3"  order="date" sort="desc"}--}}
                         @endforeach
                     </div>
                 </div>
@@ -56,13 +71,18 @@
                 <a href="/uuij/" class="block-title" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">So'ngi yangiliklar</a>
                 <div class="mb-25">
                     @foreach($latest as $new)
-                        {{--                        {custom template="sidebar" category="27,49,50,51,28,38" category="38"  limit="8" }--}}
-                        <a class="news-lenta w-100" href="{{ route('post',$new->id) }}">
-                            <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
-                            <span class="news-lenta__title"> {{ $new->title_uz }}</span>
+                        {{-- {custom template="sidebar" category="27,49,50,51,28,38" category="38"  limit="8" } --}}
+                        <a class="news-lenta w-100" href="{{ route('post', $new->id) }}">
+                            <div class="news-meta">
+                                <span>{{ $new->created_at->format('d M Y H:i') }}</span>
+                            </div>
+                            <span class="news-lenta__title">
+                                 {{ $new->{'title_' . app()->getLocale()} ?? $new->title_uz }}
+                            </span>
                         </a>
                         <br/>
                     @endforeach
+
                 </div>
                 <a href="/" class="main-btn-v2 w-100" style="background: #22bad233;">Ko`proq yangiliklar</a>
             </div>
@@ -175,29 +195,34 @@
                     @foreach($news as $new)
                         <div class="tm-col-3">
                             <div class="interview-post">
-                                <a href="{{ route('post',$new->id) }}" class="white-bg">
+                                <a href="{{ route('post', $new->id) }}" class="white-bg">
                                     <div class="ip-head">
                                         <style>
-                                            .imgxx{
+                                            .imgxx {
                                                 width: 100% !important;
                                                 height: 100% !important;
                                                 object-fit: cover !important;
                                             }
-                                            /* transition: transform 1s !important;
-</style>
+                                        </style>
                                         <div class="post-thumbnail">
-                                            <img class="imgxx" src="{{asset('storage/'.$new->images->first()->image)}}">
+                                            @if ($new->images->isNotEmpty())
+                                                <img class="imgxx" src="{{ asset('storage/' . $new->images->first()->image) }}">
+                                            @else
+                                                <img class="imgxx" src="{{ asset('images/default.png') }}">
+                                            @endif
                                         </div>
                                         <span class="block-word" style="font-size: 22px !important;">Xorazmtibbiyot</span>
                                     </div>
                                     <div class="ip-body">
-                                        <div class="post-title">{{ $new->title_uz }}</div>
+                                        <div class="post-title">
+                                            {{ $new->{'title_' . app()->getLocale()} ?? $new->title_uz }}
+                                        </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        {{--                    {custom template="four_content" category="51"  limit="4"}--}}
                     @endforeach
+
 
 
 
@@ -221,14 +246,31 @@
                                 <div class="col-md-4 mb-30">
                                     <div class="news">
                                         <div class="news__img p-relative">
-                                            <a href="{full-link}"><img src="{{asset('storage/'.$new->images->first()->image)}}"></a></div>
-                                        <a class="news__title" href="{full-link}">{{ $new->title_uz }}</a>
-                                        <div class="news-meta"><span>{{$new->created_at->format('d M Y h:i ') }}</span></div>
-                                        <div class="news__desc">{{ \Illuminate\Support\Str::limit($new->content_uz, 200) }}...</div>
+                                            <a href="{{ route('post', $new->id) }}">
+                                                @if ($new->images->isNotEmpty())
+                                                    <img src="{{ asset('storage/' . $new->images->first()->image) }}">
+                                                @else
+                                                    <img src="{{ asset('images/default.png') }}"> {{-- zaxira rasm --}}
+                                                @endif
+                                            </a>
+                                        </div>
+
+                                        <a class="news__title" href="{{ route('post', $new->id) }}">
+                                            {{ $new->{'title_' . app()->getLocale()} ?? $new->title_uz }}
+                                        </a>
+
+                                        <div class="news-meta">
+                                            <span>{{ $new->created_at->format('d M Y H:i') }}</span>
+                                        </div>
+
+                                        <div class="news__desc">
+                                            {{ \Illuminate\Support\Str::limit($new->{'content_' . app()->getLocale()} ?? $new->content_uz, 200) }}...
+                                        </div>
                                     </div>
                                 </div>
-                                {{--                            {custom template="three_content" category="50"  limit="6"}--}}
                             @endforeach
+
+
 
                         </div>
                     </div>

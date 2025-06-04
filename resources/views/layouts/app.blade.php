@@ -278,15 +278,20 @@
                 <div class="page-header__options">
                     <div class="menu-btn"></div>
                     <div class="lang-wrapper">
-                        <div class="lang-block">
-                            <div class="lang-toggle">
-                                <div class="lang-current">O'zbekcha</div>
-                            </div>
-                            <div class="lang-list">
-                                <div class="lang-block"><a class="lang-link" href="/uz/changelang/kr?c=%2F">Ўзбекча</a></div>
-                                <div class="lang-block"><a class="lang-link" href="/uz/changelang/ru?c=%2Fru%2F">Русский</a></div>
-                                <div class="lang-block"><a class="lang-link" href="/uz/changelang/en?c=%2Fen%2F">English</a></div>
-                            </div>
+{{--                        <div class="lang-block">--}}
+{{--                            <div class="lang-toggle">--}}
+{{--                                <div class="lang-current">O'zbekcha</div>--}}
+{{--                            </div>--}}
+{{--                            <div class="lang-list">--}}
+{{--                                <div class="lang-block"><a class="lang-link" href="/uz">Ўзбекча</a></div>--}}
+{{--                                <div class="lang-block"><a class="lang-link" href="/ru">Русский</a></div>--}}
+{{--                                <div class="lang-block"><a class="lang-link" href="/en">English</a></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+                        <div class="language-switcher">
+                            <a href="{{ url('uz') }}" class="{{ app()->getLocale() == 'uz' ? 'active' : '' }}">Uz</a> |
+                            <a href="{{ url('en') }}" class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">Eng</a> |
+                            <a href="{{ url('ru') }}" class="{{ app()->getLocale() == 'ru' ? 'active' : '' }}">Ру</a>
                         </div>
                     </div>
                     <div class="toggle-search"></div>

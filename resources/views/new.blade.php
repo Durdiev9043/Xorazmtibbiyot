@@ -18,7 +18,11 @@
                             <div class="row">
                                 <div class="entry-meta mb-5">
                                     {{--                                    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{date}</span></span>--}}
-                                    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh sahifa</a> / {{ $cat->name_uz }}</span>
+                                    <span class="meta-item blog-category">
+    <i class="icon-folder-open"></i>
+    <a href="/">Bosh sahifa</a> / {{ $cat->{'name_' . app()->getLocale()} ?? $cat->name_uz }}
+</span>
+
                                 </div>
                                 <style>
                                     .default-content img {
@@ -31,23 +35,22 @@
                                     }
                                 </style>
                                 <h2 class="entry-title mb-5">
-                                    <h3 rel="bookmark mb-5">{{ $new->title_uz}}</h3>
+                                    <h3 rel="bookmark mb-5">{{ $new->{'title_' . app()->getLocale()} ?? $new->title_uz }}</h3>
                                 </h2>
-
-
 
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="default-content">
                                             <p>
-                                                {{ $new->content_uz }}
+                                                {!! nl2br(e($new->{'content_' . app()->getLocale()} ?? $new->content_uz)) !!}
                                             </p>
                                             @foreach($new->images as $img)
-                                                <img src="{{ asset('storage/'.$img->image) }}" class="fr-fic fr-dib" alt=""> <br/>
+                                                <img src="{{ asset('storage/' . $img->image) }}" class="fr-fic fr-dib" alt=""> <br/>
                                             @endforeach
                                         </div>
                                     </div>
                                 </div>
+
 
 
                             </div>

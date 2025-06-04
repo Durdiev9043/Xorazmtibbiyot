@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
+use Mcamara\LaravelLocalization\LaravelLocalization;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,5 +36,9 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             $view->with('menu_categories', Category::all());
         });
+
+        App::setLocale(Session::get('locale', config('app.locale')));
+//        App::setLocale(Session::get('locale', config('laravellocalization.supportedLocales')));
+
     }
 }

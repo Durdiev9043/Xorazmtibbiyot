@@ -3,6 +3,8 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+//use Mcamara\LaravelLocalization\Middleware\LocaleViewPath;
+
 
 class Kernel extends HttpKernel
 {
@@ -37,6 +39,14 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+
+            \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
+            \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
+            \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
+            \Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class,
+//            \Mcamara\LaravelLocalization\Middleware\LocaleViewPath::class,
+
+            \App\Http\Middleware\SetLocale::class,
         ],
 
         'api' => [
@@ -63,5 +73,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
+
+        'setlocale' => \App\Http\Middleware\SetLocale::class,
     ];
 }
