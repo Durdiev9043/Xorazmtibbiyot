@@ -290,7 +290,7 @@
 {{--                        </div>--}}
                         <div class="language-switcher">
                             <a href="{{ url('uz') }}" class="{{ app()->getLocale() == 'uz' ? 'active' : '' }}">Uz</a> |
-                            <a href="{{ url('en') }}" class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">Eng</a> |
+                            <a href="{{ url('en') }}" class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">En</a> |
                             <a href="{{ url('ru') }}" class="{{ app()->getLocale() == 'ru' ? 'active' : '' }}">Ру</a>
                         </div>
                     </div>
