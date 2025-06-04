@@ -21,6 +21,7 @@
             max-height: 100% !important;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta name="description" content="O‘zbekistonda va dunyoda ro‘y berayotgan eng so‘nggi yangiliklar va xabarlar, jamiyat, iqtisodiyot, madaniyat, soprt, tenologiyalarga oid qiziqarli maqolalar. Mashhurlar bilan intervyular, barcha KUN.UZ saytida.">
     <meta name="keywords" content="Yangiliklar,xabarlar,eng so‘nggi yangiliklar, Dunyo Sport">

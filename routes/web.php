@@ -39,18 +39,30 @@ Route::group(
         Route::get('/', [WebController::class, 'home']);
         Route::get('/cat/{id}', [WebController::class, 'cat'])->name('cat');
         Route::get('/post/{id}', [WebController::class, 'post'])->name('post');
+        Auth::routes();
     });
-Auth::routes();
+
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+//Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+//
+//    // Admin panel bosh sahifasi
+//    Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+//
+//    // Admin uchun kategoriya CRUD
+//    Route::resource('categories', CategoryController::class);
+//
+//    // Admin uchun post CRUD
+//    Route::resource('posts', PostController::class);
+//});
 
-    // Admin panel bosh sahifasi
-    Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+Route::group(['prefix' => '{locale}', 'middleware' => ['setlocale', 'auth', 'admin']], function () {
 
-    // Admin uchun kategoriya CRUD
-    Route::resource('categories', CategoryController::class);
+    Route::prefix('admin')->group(function () {
+        Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+        Route::resource('categories', CategoryController::class);
+        Route::resource('posts', PostController::class);
+    });
 
-    // Admin uchun post CRUD
-    Route::resource('posts', PostController::class);
 });
+
