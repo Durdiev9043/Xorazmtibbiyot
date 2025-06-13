@@ -15,7 +15,7 @@
     <meta name="msapplication-navbutton-color" content="#000">
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <meta name="google-site-verification" content="XRKGT7ifCTNLGtaaVKVLrQLffNnYmSRe5A6BvwCfTy4" />
-    <title>O‘zbekiston va jahon yangiliklari, eng so‘nggi tezkor xabarlar, qiziqarli maqola, intervyu, foto va video materiallar - KUN.UZ</title>
+    <title>O‘zbekiston va jahon yangiliklari</title>
     <style media="screen">
         .adv-wrapper img{
             max-height: 100% !important;
@@ -295,8 +295,8 @@
                             <a href="{{ url('ru') }}" class="{{ app()->getLocale() == 'ru' ? 'active' : '' }}">Ру</a>
                         </div>
                     </div>
-                    <div class="toggle-search"></div>
-                    <div class="profile"></div>
+{{--                    <div class="toggle-search"></div>--}}
+{{--                    <div class="profile"></div>--}}
                 </div>
             </div>
         </div>
@@ -329,15 +329,16 @@
                         <div class="footer-bottom" style="background-color: #3f6da6;">
                             <div class="container space-between">
                                 <div class="footer-text">
-                                    “xorazmtibbiyot.uz” saytida eʼlon qilingan materiallardan nusxa koʻchirish,
-                                    tarqatish va boshqa shakllarda foydalanish faqat tahririyat yozma
-                                    roziligi bilan amalga oshirilishi mumkin.<br /><!--Guvohnoma: №0987. Berilgan sanasi: 22.06.2015-yil.-->
-                                    Saytda eʼlon qilinayotgan mualliflik maqolalarida keltirilgan fikrlar  muallifga tegishli va ular xorazmtibbiyot.uz tahririyati nuqtai nazarini ifoda etmasligi mumkin.<br>
-                                    {{--                        Muassis: “Axborot-kommunikatsiya texnologiyalarini rivojlantirish markazi” MCHJ.--}}
-                                    Tahririyat manzili: 100117, Xorazm viloyati Urganch shaxar.<br>
-                                    Elektron manzil: info@xorazmtibbiyot.uz <br/>
+{{--                                    “xorazmtibbiyot.uz” saytida eʼlon qilingan materiallardan nusxa koʻchirish,--}}
+{{--                                    tarqatish va boshqa shakllarda foydalanish faqat tahririyat yozma--}}
+{{--                                    roziligi bilan amalga oshirilishi mumkin.<br /><!--Guvohnoma: №0987. Berilgan sanasi: 22.06.2015-yil.-->--}}
+{{--                                    Saytda eʼlon qilinayotgan mualliflik maqolalarida keltirilgan fikrlar  muallifga tegishli va ular xorazmtibbiyot.uz tahririyati nuqtai nazarini ifoda etmasligi mumkin.<br>--}}
+{{--                                    --}}{{--                        Muassis: “Axborot-kommunikatsiya texnologiyalarini rivojlantirish markazi” MCHJ.--}}
+{{--                                    Tahririyat manzili: 100117, Xorazm viloyati Urganch shaxar.<br>--}}
+{{--                                    Elektron manzil: info@xorazmtibbiyot.uz <br/>--}}
 
-                                    Ishonch telefoni:+998(70) 700-00-00
+{{--                                    Ishonch telefoni:+998(70) 700-00-00--}}
+                                    {{ __('home.futer',) }}
                                     <!-- <br/>Ⓣ - maqola va materiallarda qo‘yilgan mazkur belgi ularning tijorat va reklama huquqlari
                                      asosida eʼlon qilinganligini bildiradi. -->
                                 </div>

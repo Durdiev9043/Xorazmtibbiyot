@@ -74,7 +74,7 @@
 
     </div>
     <div class="col-3">
-        <a href="/uuij/" class="block-title" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">So'ngi yangiliklar</a>
+        <a href="/uuij/" class="block-title" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">{{ __('home.songi',) }}</a>
         <div class="mb-25">
             @foreach($latest as $new)
                 {{-- {custom template="sidebar" category="27,49,50,51,28,38" category="38"  limit="8" } --}}
@@ -90,7 +90,7 @@
             @endforeach
 
         </div>
-        <a href="/" class="main-btn-v2 w-100" style="background: #22bad233;">Ko`proq yangiliklar</a>
+        <a href="/" class="main-btn-v2 w-100" style="background: #22bad233;">{{ __('home.koproq',) }}</a>
     </div>
 
 </div>

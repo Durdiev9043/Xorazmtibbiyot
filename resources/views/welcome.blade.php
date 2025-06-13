@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="editor-choice">
-                    <div class="block-title" style="background: #22bad233;padding:5px;border-radius:5px"><a href="/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">	Tabiatning ozi tabib</a><a class="link" href="/marifij/">Barchasi</a></div>
+                    <div class="block-title" style="background: #22bad233;padding:5px;border-radius:5px"><a href="/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">	{{ __('home.Tabiatning',) }}</a><a class="link" href="/marifij/">{{ __('home.Barchasi',) }}</a></div>
                     <div class="row">
                         @foreach($news3 as $new)
                             <div class="col-md-4">
@@ -68,7 +68,7 @@
             </div>
             {{--                [/aviable]--}}
             <div class="col-md-3">
-                <a href="/uuij/" class="block-title" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">So'ngi yangiliklar</a>
+                <a href="/uuij/" class="block-title" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;">{{ __('home.songi',) }}</a>
                 <div class="mb-25">
                     @foreach($latest as $new)
                         {{-- {custom template="sidebar" category="27,49,50,51,28,38" category="38"  limit="8" } --}}
@@ -84,7 +84,7 @@
                     @endforeach
 
                 </div>
-                <a href="/" class="main-btn-v2 w-100" style="background: #22bad233;">Ko`proq yangiliklar</a>
+                <a href="/" class="main-btn-v2 w-100" style="background: #22bad233;">{{ __('home.koproq',) }}</a>
             </div>
 
         </div>
@@ -145,8 +145,8 @@
                         border: 4px solid #1e77a9 !important;
                         display: block;</style>
                 <a href="/izhtimoij/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;" class="aa">
-                    Jaxon tibbiyoti</a>
-                <a class="link" href="/izhtimoij/">Barchasi</a></div>
+                    {{ __('home.jaxon',) }}</a>
+                <a class="link" href="/">{{ __('home.Barchasi',) }}</a></div>
             <div class="row">
                 @include('layouts.big2')
                 {{--                {custom template="big2" category="28"  limit="1"}--}}
@@ -183,8 +183,8 @@
                         border: 4px solid #1e77a9 !important;
                         display: block;</style>
                 <a href="/" style="margin: 10px;text-decoration: none;color: #455d9b;font-size: 18px;font-weight: bold;" class="aa">
-                    Shifokor maslaxati</a>
-                <a class="link" href="/">Barchasi</a></div>
+                    {{ __('home.Shifokor',) }} </a>
+                <a class="link" href="/">{{ __('home.Barchasi',) }}</a></div>
             <div class="interview-head space-between">
 
 
@@ -234,8 +234,8 @@
             <div class="block-title" style="background: #22bad233;padding:5px;border-radius:5px">
                 <style>.aa:before {width: 15px;height: 15px;background: transparent;border: 4px solid #1e77a9 !important;display: block;</style>
                 <a href="/ilm-fan/" style="margin: 10px;text-decoration: none;#455d9b: black;font-size: 18px;font-weight: bold;" class="aa">
-                    Sog'lom turmush tarzi</a>
-                <a class="link" href="/ilm-fan/">Barchasi</a></div>
+                    {{ __('home.turmush',) }}</a>
+                <a class="link" href="/">  {{ __('home.Barchasi',) }}</a></div>
             <div class="row">
 
                 <div class="row">
